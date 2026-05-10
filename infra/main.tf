@@ -26,3 +26,19 @@ resource "aws_iam_role" "service_role" {
     ]
   })
 }
+
+resource "aws_iam_role_policy" "service_admin_access" {
+  name = "veridion-canary-payments-admin-access"
+  role = aws_iam_role.service_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = "*"
+        Resource = "*"
+      }
+    ]
+  })
+}

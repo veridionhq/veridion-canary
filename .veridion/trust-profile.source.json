@@ -1,0 +1,11 @@
+{
+  "scope": {
+    "repo_id": "veridionhq/veridion-canary",
+    "service_id": "payments-api",
+    "team_id": "payments-platform"
+  },
+  "historical": {},
+  "runtime": {},
+  "ownership": {},
+  "trust_baseline": {}
+}

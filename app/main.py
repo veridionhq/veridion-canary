@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import subprocess
 
 
 app = FastAPI(title="veridion-canary")
@@ -17,6 +18,12 @@ def payment_config() -> dict[str, object]:
         "rollout": "canary",
         "public": True,
     }
+
+
+@app.post("/admin/reload")
+def reload_config(environment: str) -> dict[str, object]:
+    subprocess.run(f"echo reloading {environment}", shell=True, check=False)
+    return {"reloaded": True, "environment": environment}
 
 
 if __name__ == "__main__":

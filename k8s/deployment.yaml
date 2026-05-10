@@ -4,7 +4,7 @@ metadata:
   name: payments-api
   namespace: payments
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: payments-api
@@ -30,3 +30,5 @@ spec:
           env:
             - name: DEPLOYMENT_ENV
               value: production
+            - name: ROLLOUT_STRATEGY
+              value: rolling

@@ -2,6 +2,10 @@
 
 Small sample service repo used to validate Veridion as an external install.
 
+## Smoke Scenario
+
+This branch is a docs-only change used to validate a low-risk GO decision.
+
 ## Service
 
 - Python API surface

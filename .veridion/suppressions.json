@@ -1,4 +1,12 @@
 {
   "schema_version": 1,
-  "suppressions": []
+  "suppressions": [
+    {
+      "finding_type": "dependency",
+      "package_name": "urllib3",
+      "package_version": "1.25.8",
+      "reason": "temporary vendor exception while upstream patch is pending",
+      "expires_on": "2026-06-30"
+    }
+  ]
 }

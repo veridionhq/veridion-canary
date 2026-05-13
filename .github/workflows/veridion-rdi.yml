@@ -94,7 +94,7 @@ jobs:
 
       - name: Run Veridion RDI
         id: run-rdi
-        uses: veridionhq/veridion@90903cb07206c404fa066a904c4e9852e98f40bc
+        uses: veridionhq/veridion@ebd692d936b4144cd389a9aca87ab09cda8ce6b3
         with:
           diff-path: pr.diff
           reports: |

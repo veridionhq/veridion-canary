@@ -131,3 +131,4 @@ jobs:
           path: |
             veridion-pr-comment.md
             veridion-result.json
+            veridion-decision.json

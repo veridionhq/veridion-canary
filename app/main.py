@@ -19,6 +19,11 @@ def payment_config() -> dict[str, object]:
     }
 
 
+@app.post("/admin/reload")
+def reload_config(environment: str) -> dict[str, object]:
+    return {"accepted": True, "environment": environment}
+
+
 if __name__ == "__main__":
     import uvicorn
 

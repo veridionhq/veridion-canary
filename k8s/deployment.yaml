@@ -4,7 +4,7 @@ metadata:
   name: payments-api
   namespace: payments
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: payments-api
@@ -17,6 +17,9 @@ spec:
         - name: api
           image: ghcr.io/veridionhq/veridion-canary:latest
           imagePullPolicy: Always
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -30,3 +33,5 @@ spec:
           env:
             - name: DEPLOYMENT_ENV
               value: production
+            - name: ROLLOUT_STRATEGY
+              value: rolling

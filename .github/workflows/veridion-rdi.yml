@@ -94,7 +94,7 @@ jobs:
 
       - name: Run Veridion RDI
         id: run-rdi
-        uses: veridionhq/veridion@main
+        uses: veridionhq/veridion@0941405e82093700aadd3425e0043eaa1e755f02
         with:
           diff-path: pr.diff
           reports: |
@@ -110,7 +110,12 @@ jobs:
           policy-path: .veridion/policy.yaml
           trust-profile-source-path: .veridion/trust-profile.source.json
           trust-catalog-source-path: .veridion/trust-catalog.source.json
-          suppression-path: .veridion/suppressions.json
+          comment-summary-provider: ${{ vars.VERIDION_COMMENT_SUMMARY_PROVIDER }}
+          comment-summary-model: ${{ vars.VERIDION_COMMENT_SUMMARY_MODEL }}
+          comment-summary-api-key: ${{ secrets.VERIDION_COMMENT_SUMMARY_API_KEY }}
+          comment-summary-base-url: ${{ vars.VERIDION_COMMENT_SUMMARY_BASE_URL }}
+          comment-summary-region: ${{ vars.VERIDION_COMMENT_SUMMARY_REGION }}
+          comment-summary-style: terse
           comment-path: veridion-pr-comment.md
           json-output-path: veridion-result.json
           post-comment: "true"
@@ -126,3 +131,4 @@ jobs:
           path: |
             veridion-pr-comment.md
             veridion-result.json
+            veridion-decision.json

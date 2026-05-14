@@ -17,6 +17,9 @@ spec:
         - name: api
           image: ghcr.io/veridionhq/veridion-canary:latest
           imagePullPolicy: Always
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
           ports:
             - containerPort: 8080
           readinessProbe:
